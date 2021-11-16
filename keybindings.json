@@ -1,0 +1,81 @@
+// Place your key bindings in this file to override the defaults
+[
+    {
+        "key": "escape",
+        "command": "-interactive.input.clear",
+        "when": "!LinkedEditingInputVisible && !accessibilityHelpWidgetVisible && !breakpointWidgetVisible && !editorHasMultipleSelections && !editorHasSelection && !editorHoverVisible && !exceptionWidgetVisible && !findWidgetVisible && !inSnippetMode && !isComposing && !markersNavigationVisible && !notificationToastsVisible && !parameterHintsVisible && !renameInputVisible && !selectionAnchorSet && !suggestWidgetVisible && resourceScheme == 'vscode-interactive'"
+    },
+
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenNavigateNextInFilePicker",
+        "when": "inFilesPicker && inQuickOpen"
+    },
+    {
+        "key": "ctrl+p",
+        "command": "-workbench.action.quickOpenPreviousEditor"
+    },
+    {
+        "key": "f5 f5",
+        "command": "code-runner.run"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "-code-runner.run"
+    },
+    {
+        "key": "f5 f5",
+        "command": "vscode-postgres.runQuery",
+        "when": "editorLangId == 'postgres'"
+    },
+    {
+        "key": "f5",
+        "command": "-vscode-postgres.runQuery",
+        "when": "editorLangId == 'postgres'"
+    },
+    
+    {
+        "key": "ctrl+alt+v",
+        "command": "toggleVim"
+},
+{
+    "key": "ctrl+k m",
+    "command": "workbench.action.editor.changeLanguageMode",
+    "when": "!notebookEditorFocused"
+},
+{
+    "key": "ctrl+k m",
+    "command": "-workbench.action.editor.changeLanguageMode",
+    "when": "!notebookEditorFocused"
+},
+{
+  "key": "alt+w",
+  "command": "editor.action.insertSnippet",
+  "args": {
+              // works with cursor end of line, no selection
+              // output: print(“arr”, arr)
+    "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/print(\"$2\", $2)/}"
+  }
+},
+{
+    "key": "ctrl+shift+b",
+    "command": "workbench.action.toggleSidebarVisibility"
+},
+{
+    "key": "ctrl+b",
+    "command": "-workbench.action.toggleSidebarVisibility"
+},
+{
+    "key": "f5 f6",
+    "command": "workbench.action.debug.start"
+},
+{
+    "key": "f5",
+    "command": "-workbench.action.debug.start",
+    "when": "debuggersAvailable && debugState == 'inactive'"
+},
+{
+    "key": "ctrl+b",
+    "command": "workbench.action.closeSidebar"
+},
+]

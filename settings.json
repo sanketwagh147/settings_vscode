@@ -1,0 +1,115 @@
+
+{
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        {
+            "before": ["leader","d"],
+            "after": ["\"", "_", "d"]
+        },
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+    {
+        "before": ["<C-i>"],
+        "after": ["i", " ", "<ESC>", "r"]
+    },
+    {
+    "before": ["<Space>","k"],
+    "commands": ["editor.action.moveLinesUpAction"]
+    },
+    {
+    "before": ["leader","j"],
+    "commands": ["editor.action.moveLinesDownAction"]
+    },
+    {
+        "before": ["leader","j"],
+        "after": ["<C-/>", "j"]
+    }
+    ],
+    "vim.leader": "<Space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false,
+        "<C-c>": false,
+		"<C-x>": false,
+		"<C-y>": false,
+		"<C-v>": false,
+        
+
+    },
+    "vim.operatorPendingModeKeyBindings":[ {            "before": ["L"], "after": ["$"] },
+        {
+            "before": ["H"],
+            "after": ["^"]
+        }
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [
+                ">"
+            ],
+            "commands": [
+                "editor.action.indentLines"
+            ]
+        },
+        {
+            "before": [
+                "<"
+            ],
+            "commands": [
+                "editor.action.outdentLines"
+            ]
+        },
+
+
+    ],
+    "editor.lineNumbers": "relative",
+    "jupyter.askForKernelRestart": false,
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.defaultLanguage": "python",
+    "code-runner.showExecutionMessage": false,
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "code-runner.saveFileBeforeRun": true,
+    "vscode-neovim.neovimExecutablePaths.win32": "C:\\tools\\neovim\\Neovim\\bin\\nvim.exe", // Controls if suggestions should be accepted with "Enter" - in addition to "Tab". Helps to avoid ambiguity between inserting new lines and accepting suggestions.
+    "editor.acceptSuggestionOnEnter": "off",
+    "notebook.lineNumbers": "on",
+    "notebook.output.textLineLimit": 500,
+    "vim.cursorStylePerMode.insert": "line-thin",
+    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.replace": "block",
+    "vim.highlightedyank.enable": true,
+    "editor.cursorSurroundingLines": 50,
+    "vim.overrideCopy": true,
+    "vim.useSystemClipboard": true,
+    "tabnine.experimentalAutoImports": true,
+    "files.associations": {
+        "*.ipynb": "sql"
+    },
+    "workbench.sideBar.location": "right",
+    "files.autoSave": "afterDelay",
+    "editor.minimap.enabled": false,
+    "workbench.startupEditor": "none",
+    "window.zoomLevel": 1,
+    "vim.showMarksInGutter": true,
+    "vim.smartRelativeLine": true
+    ,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Dracula Soft",
+    "workbench.editorAssociations": {
+        "*.html": "default",
+        "*.ipynb": "jupyter-notebook"
+    },
+    "window.menuBarVisibility": "toggle",
+    "security.workspace.trust.untrustedFiles": "open",
+    "workbench.editor.untitled.hint": "hidden"
+
+}
