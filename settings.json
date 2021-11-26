@@ -36,6 +36,10 @@
     {
             "before": ["d"],
             "after": ["\"", "_", "d"]
+        },  
+        {
+            "before": ["x"],
+            "after": ["\"", "_", "x"]
         }, 
     {
             "before": ["<leader>","d"],
@@ -136,10 +140,7 @@
     "commentDown": [
         "editor.action.addCommentLine",
         "cursorDown"
-    ]
-                },
-    // Comment and go down a line
-    "macros": {
+    ],
     "uncommentDown": [
         "editor.action.removeCommentLine",
         "cursorDown"

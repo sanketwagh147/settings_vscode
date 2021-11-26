@@ -124,13 +124,14 @@
     "command": "-testing.reRunLastRun"
 },
 {
-    "key": "ctrl+oem_2",
-    "command": "macros.commentDown",
+    "key": "ctrl+shift+oem_2",
+    "command": "macros.uncommentDown",
     "when": "editorTextFocus && !editorReadonly"
 },
 {
     "key": "ctrl+oem_2",
-    "command": "-editor.action.commentLine",
+    "command": "macros.commentDown",
     "when": "editorTextFocus && !editorReadonly"
 }
+
 ]
