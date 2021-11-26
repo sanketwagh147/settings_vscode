@@ -48,14 +48,23 @@
     "command": "-workbench.action.editor.changeLanguageMode",
     "when": "!notebookEditorFocused"
 },
+// {
+//     "key": "alt+w",
+//     "command": "editor.action.insertSnippet",
+//     "args": {
+//               // works with cursor end of line, no selection
+//               // output: print(“arr”, arr)
+//     "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/print(\"---------------$2-------\\n\", $2, \"\\n----------End $2----------\")/}"
+//   }
+// },
 {
-  "key": "alt+w",
-  "command": "editor.action.insertSnippet",
-  "args": {
+    "key": "alt+i",
+    "command": "editor.action.insertSnippet",
+    "args": {
               // works with cursor end of line, no selection
               // output: print(“arr”, arr)
-    "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/print(\"$2\", $2)/}"
-  }
+    "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/ic($2)/}"
+}
 },
 {
     "key": "ctrl+shift+b",
@@ -78,4 +87,50 @@
     "key": "ctrl+b",
     "command": "workbench.action.closeSidebar"
 },
+{
+    "key": "ctrl+shift+a",
+    "command": "workbench.action.toggleActivityBarVisibility"
+},
+{
+    "key": "alt+e",
+    "command": "workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+},
+{
+    "key": "ctrl+shift+e",
+    "command": "-workbench.view.explorer",
+    "when": "viewContainer.workbench.view.explorer.enabled"
+},
+{
+    "key": "alt+g",
+    "command": "workbench.view.scm",
+    "when": "workbench.scm.active"
+},
+{
+    "key": "ctrl+shift+g",
+    "command": "-workbench.view.scm",
+    "when": "workbench.scm.active"
+},
+{
+    "key": "alt+d",
+    "command": "workbench.view.extension.postgres-explorer"
+},
+{
+    "key": "f5 f7",
+    "command": "testing.reRunLastRun"
+},
+{
+    "key": "ctrl+oem_1 l",
+    "command": "-testing.reRunLastRun"
+},
+{
+    "key": "ctrl+oem_2",
+    "command": "macros.commentDown",
+    "when": "editorTextFocus && !editorReadonly"
+},
+{
+    "key": "ctrl+oem_2",
+    "command": "-editor.action.commentLine",
+    "when": "editorTextFocus && !editorReadonly"
+}
 ]
