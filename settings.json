@@ -1,23 +1,38 @@
 
 {   "workbench.colorCustomizations": {
-    "editorCursor.foreground": "#ffff00",
-    "terminalCursor.foreground": "#ffff00"
+    "editorCursor.foreground": "#FFFFFF",
+    "terminalCursor.foreground": "#ffffff"
 },
     "vim.easymotion": true,
     "vim.incsearch": true,
     "vim.useCtrlKeys": true,
     "vim.hlsearch": false,
-    "vim.sneak": true,
     "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "leader", "p"],
+            "after": ["j", "j", "I", "p", "r", "i", "n", "t", "(", "j", "j","A", ")" ]
+        },
         {
             "before": ["j", "j"],
             "after": ["<Esc>"]
+        },
+        {
+            "before": ["v", "l"],
+            "after": ["<Esc>", "V"]
+        },
+        {
+            "before": ["v", "m"],
+            "after": ["<Esc>", "v"]
         }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
             "before": ["leader","d"],
             "after": ["\"", "_", "d"]
+        },
+        {
+            "before": ["leader","s"],
+            "after": ["leader", "leader", "s"]
         },
         {
         "before": ["<Space>","k"],
@@ -30,8 +45,21 @@
     ],
     "vim.normalModeKeyBindingsNonRecursive": [
     {
+        "before": ["leader","w"],
+        "after": ["g", "g", "V", "G"]
+    },
+    {
+        "before": ["v", "v"],
+        "after": ["V"]
+    },
+
+    {
         "before": ["<leader>","i"],
         "after": ["i", " ", "<ESC>", "r"]
+    },
+    {
+        "before": ["<leader>","a"],
+        "after": ["a", " ", "<ESC>", "r"]
     },
     {
             "before": ["d"],
@@ -44,9 +72,13 @@
     {
             "before": ["<leader>","d"],
             "after": ["d"]
-        }
-
+        },
+    {
+        "before": ["leader", "s"],
+        "after": ["leader", "leader", "s"]
+    }
     ],
+
     "vim.leader": "<Space>",
     "vim.handleKeys": {
         "<C-a>": true,
@@ -56,9 +88,18 @@
 		"<C-y>": true,
 		"<C-v>": false,
         
-
+        "indentRainbow.colors": [
+        "rgba(205,255,64,0.07)",
+        "rgba(107,255,127,0.07)",
+        "rgba(205,127,255,0.07)",
+        "rgba(70,236,236,0.07)",
+]
     },
-    "vim.operatorPendingModeKeyBindings":[ {            "before": ["L"], "after": ["$"] },
+    "vim.operatorPendingModeKeyBindings":[
+        {
+            "before": ["L"],
+            "after": ["$"]
+            },
         {
             "before": ["H"],
             "after": ["^"]
@@ -66,31 +107,32 @@
     ],
     "vim.visualModeKeyBindings": [
         {
-            "before": [
-                ">"
-            ],
-            "commands": [
-                "editor.action.indentLines"
-            ]
+            "before": [ ">" ],
+            "commands": [ "editor.action.indentLines" ]
         },
         {
-            "before": [
-                "<"
-            ],
-            "commands": [
-                "editor.action.outdentLines"
-            ]
+            "before": [ "<" ],
+            "commands": [ "editor.action.outdentLines" ]
         },
-
-
     ],
     "terminal.integrated.profiles.windows": {
-    "PowerShell": {
-    "source": "PowerShell",
-    "icon": "terminal-powershell",
-    "args": ["-ExecutionPolicy", "Bypass"]
+        "PowerShell": {
+            "source": "PowerShell",
+            "icon": "terminal-powershell",
+            "args": [ "-ExecutionPolicy", "Bypass" ]
+                        },
+        "Command Prompt": {
+            "path": [ "${env:windir}\\Sysnative\\cmd.exe", "${env:windir}\\System32\\cmd.exe" ],
+            "args": [],
+            "icon": "terminal-cmd"
+        },
+        "Git Bash": {
+            "source": "Git Bash"
+        },
+        "Windows PowerShell": {
+            "path": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe"
+        }
     },
-},
     "editor.lineNumbers": "relative",
     "editor.hover.enabled": false,
     "jupyter.askForKernelRestart": false,
@@ -103,24 +145,19 @@
     "notebook.lineNumbers": "on",
     "notebook.output.textLineLimit": 500,
     "vim.cursorStylePerMode.insert": "line",
-    "vim.cursorStylePerMode.normal": "block",
+    "vim.cursorStylePerMode.normal": "block-outline",
     "vim.cursorStylePerMode.replace": "block",
     "vim.highlightedyank.enable": true,
     "editor.cursorSurroundingLines": 5,
     "vim.overrideCopy": true,
     "vim.useSystemClipboard": true,
-    "tabnine.experimentalAutoImports": true,
+    "tabnine.experimentalAutoports": true,
     "files.associations": {
         "*.ipynb": "sql"
     },
-    "workbench.sideBar.location": "right",
     "editor.minimap.enabled": false,
-    "workbench.startupEditor": "none",
-    "window.zoomLevel": 1,
     "vim.showMarksInGutter": true,
-    "vim.smartRelativeLine": true
-    ,
-    "workbench.iconTheme": "material-icon-theme",
+    "vim.smartRelativeLine": true,
     "workbench.editorAssociations": {
         "*.html": "default",
         "*.ipynb": "jupyter-notebook"
@@ -130,21 +167,62 @@
     "workbench.editor.untitled.hint": "hidden",
     "editor.autoIndent": "advanced",
     "screencastMode.verticalOffset": 5,
-    "glassit.alpha": 235,
+    "glassit.alpha": 255,
     "autoHide.panelDelay": 30,
     "autoHide.sideBarDelay": 30,
-    "workbench.colorTheme": "GitHub Dark Dimmed",
-    "workbench.activityBar.visible": false,
     // Comment and go down a line
     "macros": {
     "commentDown": [
-        "editor.action.addCommentLine",
+        "editor.action.commentLine",
         "cursorDown"
     ],
     "uncommentDown": [
-        "editor.action.removeCommentLine",
+        "editor.action.commentLine",
         "cursorDown"
     ]
+
+                },
+                "better-comments.highlightPlainText": true,
+                "terminal.integrated.allowMnemonics": true,
+                "terminal.integrated.copyOnSelection": true,
+                "terminal.integrated.cursorBlinking": true,
+                "terminal.integrated.defaultProfile.windows": "Windows PowerShell",
+                "workbench.iconTheme": "vscode-icons",
+                "workbench.activityBar.visible": false,
+                "workbench.colorTheme": "Palenight (Mild Contrast)",
+                "cSpell.userWords": [
+                    "pydantic",
+                    "Wagh's"
+                ],
+                "files.autoSave": "onFocusChange",
+                "vim.mouseSelectionGoesIntoVisualMode": false,
+                "vim.enableNeovim": true,
+                "indentRainbow.colorOnWhiteSpaceOnly": true,
+                "pythonIndent.keepHangingBracketOnLine": true,
+                "editor.cursorSmoothCaretAnimation": true,
+                "editor.cursorBlinking": "expand",
+                "editor.cursorWidth": 1,
+                "editor.hideCursorInOverviewRuler": true,
+                "terminal.integrated.cursorStyle": "line",
+                "vim.cursorStylePerMode.visual": "line",
+                "vim.cursorStylePerMode.visualblock": "line",
+                "vim.cursorStylePerMode.visualline": "line",
+                "vim.sneak": true,
+                "breadcrumbs.enabled": false,
+                "window.zoomLevel": 2,
+                "window.zoomLevel": 1,
+
+                "auto-rename-tag.activationOnLanguage": [
+                    "html",
+                    "xml",
+                    "php",
+                    "javascript"
+                ],
+                "editor.wordWrap": "on",
+                "tabnine.experimentalAutoImports": true,
+                "[html]": {
+                    "editor.defaultFormatter": "vscode.html-language-features"
                 }
+
 
 }

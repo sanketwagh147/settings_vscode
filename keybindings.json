@@ -57,15 +57,15 @@
 //     "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/print(\"---------------$2-------\\n\", $2, \"\\n----------End $2----------\")/}"
 //   }
 // },
-{
-    "key": "alt+i",
-    "command": "editor.action.insertSnippet",
-    "args": {
-              // works with cursor end of line, no selection
-              // output: print(“arr”, arr)
-    "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/ic($2)/}"
-}
-},
+// {
+//     "key": "alt+p",
+//     "command": "editor.action.insertSnippet",
+//     "args": {
+//               // works with cursor end of line, no selection
+//               // output: print(“arr”, arr)
+//     "snippet": "\n${TM_CURRENT_LINE/(\\s*)(\\w*)\\b.*/print($2)/}"
+// }
+// },
 {
     "key": "ctrl+shift+b",
     "command": "workbench.action.toggleSidebarVisibility"
@@ -132,6 +132,29 @@
     "key": "ctrl+oem_2",
     "command": "macros.commentDown",
     "when": "editorTextFocus && !editorReadonly"
+},
+{
+    "key": "shift+oem_period",
+    "command": "git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+},
+{
+    "key": "ctrl+k ctrl+alt+s",
+    "command": "-git.stageSelectedRanges",
+    "when": "isInDiffEditor"
+},
+{
+    "key": "shift+oem_comma",
+    "command": "git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
+},
+{
+    "key": "ctrl+k ctrl+n",
+    "command": "-git.unstageSelectedRanges",
+    "when": "isInDiffEditor"
+},
+{
+    "key": "ctrl+f11",
+    "command": "workbench.action.toggleMaximizedPanel"
 }
-
 ]
